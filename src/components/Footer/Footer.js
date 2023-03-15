@@ -12,13 +12,13 @@ export const Footer = () => {
                     <p>Phone: 012-345-6789</p>
                     <p>Email: dimitar@gyurchev.com</p>
                 </div>
-                <div className={styles.footerColumn}>
+                <div className={styles.footerColumn} id="follow">
                     <h3>Follow Us</h3>
                     <div className={styles.socialIcons}>
-                        <a href="#"><FontAwesomeIcon icon={faFacebookF} style={{ color: 'white' }} /></a>
-                        <a href="#"><FontAwesomeIcon icon={faTwitter} style={{ color: 'white' }} /></a>
-                        <a href="#"><FontAwesomeIcon icon={faInstagram} style={{ color: 'white' }} /></a>
-                        <a href="#"><FontAwesomeIcon icon={faLinkedinIn} style={{ color: 'white' }} /></a>
+                        <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
+                        <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+                        <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+                        <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
                     </div>
                 </div>
             </div>

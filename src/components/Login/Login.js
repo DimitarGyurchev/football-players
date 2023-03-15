@@ -1,7 +1,7 @@
-import styles from './LoginForm.module.css';
+import styles from './Login.module.css';
 
 import React, { useState } from 'react';
-export const LoginForm = () => {
+export const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -20,10 +20,11 @@ export const LoginForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <h2>Login</h2>
             <label htmlFor="username">Username:</label>
             <input
+                className={styles.input}
                 type="text"
                 id="username"
                 name="username"
@@ -33,6 +34,7 @@ export const LoginForm = () => {
 
             <label htmlFor="password">Password:</label>
             <input
+                className={styles.input}
                 type="password"
                 id="password"
                 name="password"
@@ -40,7 +42,7 @@ export const LoginForm = () => {
                 onChange={handlePasswordChange}
             />
 
-            <button type="submit">Login</button>
+            <button className={styles.button} type="submit">Login</button>
         </form>
 
 
