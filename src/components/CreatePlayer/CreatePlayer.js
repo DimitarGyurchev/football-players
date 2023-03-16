@@ -38,28 +38,29 @@ export const CreatePlayer = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form className={styles.form} onSubmit={handleSubmit}>
+            <h2 className={styles.heading}>Create Player</h2>
+            <label className={styles.label}>
                 Full Name:
-                <input type="text" value={fullName} onChange={handleFullNameChange} placeholder="Enter full name" />
+                <input className={styles.input} type="text" value={fullName} onChange={handleFullNameChange} placeholder="Enter full name" />
             </label>
-            <label>
+            <label className={styles.label}>
                 Age:
-                <input type="number" value={age} onChange={handleAgeChange} placeholder="Enter age" />
+                <input className={styles.ageInput} type="number" value={age} onChange={handleAgeChange} placeholder="Enter age" />
             </label>
-            <label>
+            <label className={styles.label}>
                 Nationality:
-                <input type="text" value={nationality} onChange={handleNationalityChange} placeholder="Enter nationality" />
+                <input className={styles.input} type="text" value={nationality} onChange={handleNationalityChange} placeholder="Enter nationality" />
             </label>
-            <label>
+            <label className={styles.label}>
                 Position:
-                <input type="text" value={position} onChange={handlePositionChange} placeholder="Enter position" />
+                <input className={styles.input} type="text" value={position} onChange={handlePositionChange} placeholder="Enter position" />
             </label>
-            <label>
+            <label className={styles.label}>
                 Image:
-                <input type="text" value={image} onChange={handleImageChange} placeholder="Enter image URL" />
+                <input className={styles.input} type="text" value={image} onChange={handleImageChange} placeholder="Enter image URL" />
             </label>
-            <button type="submit">Create Player</button>
+            <button className={styles.button} type="submit">Create Player</button>
         </form>
     );
 }

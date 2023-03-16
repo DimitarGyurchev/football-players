@@ -2,18 +2,15 @@ import React, { useState } from 'react';
 import styles from './Registration.module.css';
 
 export const Registration = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [username, setusername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleFirstNameChange = (event) => {
-        setFirstName(event.target.value);
+    const handleUsernameChange = (event) => {
+        setusername(event.target.value);
     };
 
-    const handleLastNameChange = (event) => {
-        setLastName(event.target.value);
-    };
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -23,39 +20,33 @@ export const Registration = () => {
         setPassword(event.target.value);
     };
 
+    const handleConfirmPasswordChange = (event) => {
+        setConfirmPassword(event.target.value);
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(`First name: ${firstName}`);
-        console.log(`Last name: ${lastName}`);
+        console.log(`Username: ${username}`);
         console.log(`Email: ${email}`);
         console.log(`Password: ${password}`);
+        console.log(`Confirm Password: ${confirmPassword}`);
     };
 
     return (
         <form onSubmit={handleSubmit} className={styles.registrationForm}>
             <h2>Register</h2>
             <div className={styles.formGroup}>
-                <label htmlFor="firstName">First Name:</label>
+                <label htmlFor="username">Username:</label>
                 <input
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={firstName}
-                    onChange={handleFirstNameChange}
+                    id="username"
+                    name="username"
+                    value={username}
+                    onChange={handleUsernameChange}
                     required
                 />
             </div>
-            <div className={styles.formGroup}>
-                <label htmlFor="lastName">Last Name:</label>
-                <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={lastName}
-                    onChange={handleLastNameChange}
-                    required
-                />
-            </div>
+
             <div className={styles.formGroup}>
                 <label htmlFor="email">Email:</label>
                 <input
@@ -75,6 +66,18 @@ export const Registration = () => {
                     name="password"
                     value={password}
                     onChange={handlePasswordChange}
+                    minLength="8"
+                    required
+                />
+            </div>
+            <div className={styles.formGroup}>
+                <label htmlFor="confirmPassword">Confirm Password:</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    value={confirmPassword}
+                    onChange={handleConfirmPasswordChange}
                     minLength="8"
                     required
                 />

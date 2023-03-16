@@ -1,0 +1,24 @@
+.containerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    padding: 10px;
+}
+
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    background: #333;
+}
+
+.subtitle {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    background: #333;
+}
