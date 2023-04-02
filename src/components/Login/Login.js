@@ -1,35 +1,32 @@
 import styles from './Login.module.css';
 
-import React, { useState } from 'react';
-export const Login = () => {
+import { useAuthContext } from "../../contexts/AuthContext";
+import { useForm } from "../../hooks/useForm";
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+const LoginFormKeys = {
+    Email: 'email',
+    Password: 'password'
+};
 
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Username: ${username} Password: ${password}`);
-    };
+export const Login = ({
+}) => {
+    const { onLoginSubmit } = useAuthContext();
+    const { values, changeHandler, onSubmit } = useForm({
+        [LoginFormKeys.Email]: '',
+        [LoginFormKeys.Password]: '',
+    }, onLoginSubmit);
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form} method="POST" onSubmit={onSubmit}>
             <h2>Login</h2>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Email:</label>
             <input
                 className={styles.input}
-                type="text"
+                type="username"
                 id="username"
-                name="username"
-                value={username}
-                onChange={handleUsernameChange}
+                name={LoginFormKeys.Email}
+                value={values[LoginFormKeys.Email]}
+                onChange={changeHandler}
             />
 
             <label htmlFor="password">Password:</label>
@@ -37,12 +34,12 @@ export const Login = () => {
                 className={styles.input}
                 type="password"
                 id="password"
-                name="password"
-                value={password}
-                onChange={handlePasswordChange}
+                name={LoginFormKeys.Password}
+                value={values[LoginFormKeys.Password]}
+                onChange={changeHandler}
             />
 
-            <button className={styles.button} type="submit">Login</button>
+            <button className={styles.button} type="submit" value="Login">Login</button>
         </form>
 
 

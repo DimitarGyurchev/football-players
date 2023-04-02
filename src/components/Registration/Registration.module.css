@@ -21,7 +21,6 @@ label {
     color: white;
 }
 
-input[type="text"],
 input[type="email"],
 input[type="password"] {
     margin-bottom: 10px;
@@ -35,7 +34,6 @@ input[type="password"] {
     color: #333;
 }
 
-input[type="text"].large,
 input[type="email"].large,
 input[type="email"].small,
 input[type="password"].large,
@@ -43,14 +41,12 @@ input[type="password"].small {
     width: 100%;
 }
 
-input[type="text"].large,
 input[type="email"].large,
 input[type="password"].large {
     font-size: 20px;
     padding: 10px;
 }
 
-input[type="text"].small,
 input[type="email"].small,
 input[type="password"].small {
     font-size: 16px;

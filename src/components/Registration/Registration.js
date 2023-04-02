@@ -36,18 +36,6 @@ export const Registration = () => {
         <form onSubmit={handleSubmit} className={styles.registrationForm}>
             <h2>Register</h2>
             <div className={styles.formGroup}>
-                <label htmlFor="username">Username:</label>
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    value={username}
-                    onChange={handleUsernameChange}
-                    required
-                />
-            </div>
-
-            <div className={styles.formGroup}>
                 <label htmlFor="email">Email:</label>
                 <input
                     type="email"
