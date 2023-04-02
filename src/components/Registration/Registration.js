@@ -1,39 +1,20 @@
-import React, { useState } from 'react';
+import { useContext } from "react";
 import styles from './Registration.module.css';
 
+import { useForm } from "../../hooks/useForm";
+import { AuthContext } from "../../contexts/AuthContext";
+
+
 export const Registration = () => {
-    const [username, setusername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-
-    const handleUsernameChange = (event) => {
-        setusername(event.target.value);
-    };
-
-
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
-    const handleConfirmPasswordChange = (event) => {
-        setConfirmPassword(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Username: ${username}`);
-        console.log(`Email: ${email}`);
-        console.log(`Password: ${password}`);
-        console.log(`Confirm Password: ${confirmPassword}`);
-    };
+    const { onRegisterSubmit } = useContext(AuthContext);
+    const { values, changeHandler, onSubmit } = useForm({
+        email: '',
+        password: '',
+        confirmPassword: '',
+    }, onRegisterSubmit);
 
     return (
-        <form onSubmit={handleSubmit} className={styles.registrationForm}>
+        <form className={styles.registrationForm} method="post" onSubmit={onSubmit}>
             <h2>Register</h2>
             <div className={styles.formGroup}>
                 <label htmlFor="email">Email:</label>
@@ -41,8 +22,9 @@ export const Registration = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={email}
-                    onChange={handleEmailChange}
+                    placeholder="dimi@email.com"
+                    value={values.email}
+                    onChange={changeHandler}
                     required
                 />
             </div>
@@ -52,9 +34,9 @@ export const Registration = () => {
                     type="password"
                     id="password"
                     name="password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                    minLength="8"
+                    value={values.password}
+                    onChange={changeHandler}
+                    minLength="6"
                     required
                 />
             </div>
@@ -64,9 +46,9 @@ export const Registration = () => {
                     type="password"
                     id="confirmPassword"
                     name="confirmPassword"
-                    value={confirmPassword}
-                    onChange={handleConfirmPasswordChange}
-                    minLength="8"
+                    value={values.confirmPassword}
+                    onChange={changeHandler}
+                    minLength="6"
                     required
                 />
             </div>

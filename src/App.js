@@ -6,11 +6,11 @@ import { Footer } from "./components/Footer/Footer";
 import { Login } from "./components/Login/Login";
 import { Header } from "./components/Header/Header";
 import { Registration } from "./components/Registration/Registration";
-import { CreateFootballPlayer } from './components/CreateFootballPlayer/CreateFootballPlayer';
 import { Home } from './components/Home/Home';
 import { RouteGuard } from './components/common/RouteGuard';
 import { Logout } from './components/Logout/Logout';
 import { Catalog } from './components/Catalog/Catalog';
+import { CreateFootballPlayer } from './components/CreateFootballPlayer/CreateFootballPlayer';
 
 function App() {
     return (

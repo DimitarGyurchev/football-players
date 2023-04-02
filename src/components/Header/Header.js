@@ -11,7 +11,7 @@ export const Header = () => {
 
     return (
 
-        <header>
+        <header className={styles.header}>
             <nav>
                 <div>
                     <Link to="/">Home</Link>
