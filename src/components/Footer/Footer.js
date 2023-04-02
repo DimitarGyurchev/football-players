@@ -15,11 +15,14 @@ export const Footer = () => {
                 <div className={styles.footerColumn} id="follow">
                     <h3>Follow Us</h3>
                     <div className={styles.socialIcons}>
-                        <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-                        <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                        <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-                        <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+                        <ul>
+                            <button type="button" role="link"><FontAwesomeIcon icon={faFacebookF} /></button>
+                            <button type="button" role="link"><FontAwesomeIcon icon={faTwitter} /></button>
+                            <button type="button" role="link"><FontAwesomeIcon icon={faInstagram} /></button>
+                            <button type="button" role="link"><FontAwesomeIcon icon={faLinkedinIn} /></button>
+                        </ul>
                     </div>
+
                 </div>
             </div>
             <div className={styles.footerCopy}>

@@ -29,11 +29,18 @@ footer p {
     padding-left: 10px;
 }
 
-.socialIcons a {
+.socialIcons li {
     color: white;
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.socialIcons a:hover {
+.socialIcons li:hover {
     color: #4CAF50;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0px;
 }
