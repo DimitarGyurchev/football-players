@@ -52,7 +52,7 @@ export const FootballPlayerProvider = ({
     };
 
     return (
-        <FootballPlayerContext.Provider values={contextValues}>
+        <FootballPlayerContext.Provider value={contextValues}>
             {children}
         </FootballPlayerContext.Provider>
     );

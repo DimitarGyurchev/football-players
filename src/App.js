@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthContext';
+import { FootballPlayerProvider } from './contexts/FootballPlayerContext'
 
 import { Footer } from "./components/Footer/Footer";
 import { Login } from "./components/Login/Login";
@@ -16,34 +17,36 @@ function App() {
     return (
 
         <AuthProvider>
-            <div className="App">
+            <FootballPlayerProvider>
+                <div className="App">
 
-                <Header />
+                    <Header />
 
-                <main id="main-content">
-                    <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/register' element={<Registration />} />
-                        <Route path='/catalog' element={<Catalog />} />
-                        {/* <Route path='/catalog/:gameId' element={<GameDetails />} /> */}
+                    <main id="main-content">
+                        <Routes>
+                            <Route path='/' element={<Home />} />
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/register' element={<Registration />} />
+                            <Route path='/catalog' element={<Catalog />} />
+                            {/* <Route path='/catalog/:gameId' element={<GameDetails />} /> */}
 
 
 
-                        <Route element={<RouteGuard />}>
-                            {/* <Route path='/catalog/:gameId/edit' element={
+                            <Route element={<RouteGuard />}>
+                                {/* <Route path='/catalog/:gameId/edit' element={
                                 // <FootballPlayerOwner>
                                 //     <EditFootballPlayer />
                                 // </FootballPlayerOwner>
                             } /> */}
-                            <Route path='/create' element={<CreateFootballPlayer />} />
-                            <Route path='/logout' element={<Logout />} />
-                        </Route>
-                    </Routes>
+                                <Route path='/create' element={<CreateFootballPlayer />} />
+                                <Route path='/logout' element={<Logout />} />
+                            </Route>
+                        </Routes>
 
-                </main>
-                <Footer />
-            </div >
+                    </main>
+                    <Footer />
+                </div >
+            </FootballPlayerProvider>
         </AuthProvider>
 
     );

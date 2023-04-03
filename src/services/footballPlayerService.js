@@ -14,7 +14,7 @@ export const footballPlayerServiceFactory = (token) => {
     }
 
     const getOne = async (playerId) => {
-        const result = await request.get(`${url}/${gameId}`);
+        const result = await request.get(`${url}/${playerId}`);
 
         return result;
     }
