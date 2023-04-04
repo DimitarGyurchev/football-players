@@ -1,4 +1,4 @@
-import styles from "./CreateFootballPlayer.css"
+import styles from "./CreateFootballPlayer.module.css"
 
 import { usePlayerContext } from '../../contexts/FootballPlayerContext';
 import { useForm } from '../../hooks/useForm';

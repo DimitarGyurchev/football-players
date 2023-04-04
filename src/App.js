@@ -12,6 +12,7 @@ import { RouteGuard } from './components/common/RouteGuard';
 import { Logout } from './components/Logout/Logout';
 import { Catalog } from './components/Catalog/Catalog';
 import { CreateFootballPlayer } from './components/CreateFootballPlayer/CreateFootballPlayer';
+import { PlayerDetails } from './components/PlayerDetails/PlayerDetails';
 
 function App() {
     return (
@@ -28,7 +29,7 @@ function App() {
                             <Route path='/login' element={<Login />} />
                             <Route path='/register' element={<Registration />} />
                             <Route path='/catalog' element={<Catalog />} />
-                            {/* <Route path='/catalog/:gameId' element={<GameDetails />} /> */}
+                            <Route path='/catalog/:playerId' element={<PlayerDetails />} />
 
 
 

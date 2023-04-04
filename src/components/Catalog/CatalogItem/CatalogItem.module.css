@@ -1,0 +1,43 @@
+.allFootballPLayers {
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.allFootballPlayers_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.allFootballPlayers_info h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.allFootballPlayers_info img {
+    width: 20%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.button_info {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button_info:hover {
+    background-color: #3e8e41;
+
+}

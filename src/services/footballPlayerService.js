@@ -1,7 +1,7 @@
 import { requestFactory } from './requester';
 
 const baseUrl = 'http://localhost:3030'
-const url = `${baseUrl}/data/games`;
+const url = `${baseUrl}/data/players`;
 
 export const footballPlayerServiceFactory = (token) => {
     const request = requestFactory(token);
