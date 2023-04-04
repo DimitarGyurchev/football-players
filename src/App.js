@@ -34,7 +34,7 @@ function App() {
 
 
                             <Route element={<RouteGuard />}>
-                                {/* <Route path='/catalog/:gameId/edit' element={
+                                {/* <Route path='/catalog/:playerId/edit' element={
                                 // <FootballPlayerOwner>
                                 //     <EditFootballPlayer />
                                 // </FootballPlayerOwner>

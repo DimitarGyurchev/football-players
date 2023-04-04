@@ -1,3 +1,5 @@
+import styles from './PlayerDetails.module.css'
+
 import { useEffect, useReducer } from "react";
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
@@ -41,7 +43,7 @@ export const PlayerDetails = () => {
         });
     };
 
-    const isOwner = player._owner === userId;
+    const isOwner = player._ownerId === userId;
 
     const onDeleteClick = async () => {
         // eslint-disable-next-line no-restricted-globals
@@ -57,36 +59,36 @@ export const PlayerDetails = () => {
     };
 
     return (
-        <section className="player_details">
+        <section className={styles.player_details}>
             <h1>Football Player Details</h1>
-            <div className="info_section">
-                <div className="player_header">
+            <div className={styles.info_section}>
+                <div className={styles.player_header}>
                     <h1>{player.fullName}</h1>
-                    <img className="game_img" src={player.imageUrl} alt="Football Player img" />
-                    <span className="age">Age: {player.age}</span>
-                    <span className="nationality">Nationality: {player.nationality}</span>
-                    <span className="position">Position: {player.position}</span>
+                    <img className={styles.game_img} src={player.imageUrl} alt="Football Player img" />
+                    <span className={styles.age}>Age: {player.age}</span>
+                    <span className={styles.nationality}>Nationality: {player.nationality}</span>
+                    <span className={styles.position}>Position: {player.position}</span>
                 </div>
 
-                <div className="details_comments">
+                <div className={styles.details_comments}>
                     <h1>Comments:</h1>
                     <ul>
                         {player.comments && player.comments.map(x => (
-                            <li key={x._id} className="comment">
+                            <li key={x._id} className={styles.comment}>
                                 <p>{x.author.email}: {x.comment}</p>
                             </li>
                         ))}
                     </ul>
 
                     {!player.comments?.length && (
-                        <p className="no_comment">No comments!</p>
+                        <p className={styles.no_comment}>No comments!</p>
                     )}
                 </div>
 
                 {isOwner && (
-                    <div className="buttons">
-                        <Link to={`/catalog/${player._id}/edit`} className="button">Edit</Link>
-                        <button className="button" onClick={onDeleteClick}>Delete</button>
+                    <div className={styles.buttons}>
+                        <Link to={`/catalog/${player._id}/edit`} className={styles.button_edit}>Edit</Link>
+                        <button className={styles.button_delete} onClick={onDeleteClick}>Delete</button>
                     </div>
                 )}
             </div>

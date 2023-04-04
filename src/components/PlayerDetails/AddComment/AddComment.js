@@ -1,3 +1,5 @@
+import styles from "./AddComment.module.css"
+
 import { useForm } from "../../../hooks/useForm";
 
 export const AddComment = ({
@@ -9,8 +11,8 @@ export const AddComment = ({
 
     return (
         <article className="create-comment">
-            <label>Add new comment:</label>
-            <form className="form" onSubmit={onSubmit}>
+            <label className={styles.label}>Add new comment:</label>
+            <form className={styles.form} onSubmit={onSubmit}>
                 <textarea name="comment" placeholder="Write your comment" value={values.comment} onChange={changeHandler}></textarea>
                 <button type="submit" value="Add Comment">Add Comment</button>
             </form>
