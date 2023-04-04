@@ -13,6 +13,8 @@ import { Logout } from './components/Logout/Logout';
 import { Catalog } from './components/Catalog/Catalog';
 import { CreateFootballPlayer } from './components/CreateFootballPlayer/CreateFootballPlayer';
 import { PlayerDetails } from './components/PlayerDetails/PlayerDetails';
+import { FootballPlayerOwner } from './components/common/FootballPlayerOwner';
+import { EditPlayer } from './components/EditPlayer/EditPlayer';
 
 function App() {
     return (
@@ -34,11 +36,11 @@ function App() {
 
 
                             <Route element={<RouteGuard />}>
-                                {/* <Route path='/catalog/:playerId/edit' element={
-                                // <FootballPlayerOwner>
-                                //     <EditFootballPlayer />
-                                // </FootballPlayerOwner>
-                            } /> */}
+                                <Route path='/catalog/:playerId/edit' element={
+                                    <FootballPlayerOwner>
+                                        <EditPlayer />
+                                    </FootballPlayerOwner>
+                                } />
                                 <Route path='/create' element={<CreateFootballPlayer />} />
                                 <Route path='/logout' element={<Logout />} />
                             </Route>

@@ -1,17 +1,20 @@
-// import { useGameContext } from "../../contexts/GameContext";
+import { useParams, Outlet, Navigate } from 'react-router-dom';
+import { useAuthContext } from '../../contexts/AuthContext';
 
-// export const GameOwner = ({
-//     children,
-// }) => {
-//     const { gameId } = useParams();
-//     const { getGame } = useGameContext();
-//     const { userId } = useAuthContext();
+import { usePlayerContext } from "../../contexts/FootballPlayerContext";
 
-//     const currentGame = getGame(gameId);
+export const FootballPlayerOwner = ({
+    children,
+}) => {
+    const { playerId } = useParams();
+    const { getPlayer } = usePlayerContext();
+    const { userId } = useAuthContext();
 
-//     if (currentGame && currentGame._ownerId !== userId) {
-//         return <Navigate to={`/catalog/${gameId}`} replace />
-//     }
+    const currentPlayer = getPlayer(playerId);
 
-//     return children ? children : <Outlet />
-// };
+    if (currentPlayer && currentPlayer._ownerId !== userId) {
+        return <Navigate to={`/catalog/${playerId}`} replace />
+    }
+
+    return children ? children : <Outlet />
+};

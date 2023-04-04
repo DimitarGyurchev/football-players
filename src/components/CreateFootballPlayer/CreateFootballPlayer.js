@@ -23,7 +23,7 @@ export const CreateFootballPlayer = () => {
             </label>
             <label className={styles.label}>
                 Age:
-                <input className={styles.ageInput} value={values.age} onChange={changeHandler} type="number" id="age" name="age" placeholder="Enter age" />
+                <input className={styles.ageInput} value={values.age} onChange={changeHandler} type="number" id="age" name="age" min="1" placeholder="Enter age" />
             </label>
             <label className={styles.label}>
                 Nationality:
