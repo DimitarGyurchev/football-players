@@ -56,10 +56,13 @@ export const PlayerDetails = () => {
         const result = await confirmDialog(`Are you sure you want to delete this player ${player.fullName}`);
 
         if (result) {
-            await footballPlayerService.delete(player._id);
-            deletePlayer(player._id);
-            return navigate('/catalog');
-
+            if (isOwner) {
+                await footballPlayerService.delete(player._id);
+                deletePlayer(player._id);
+                return navigate('/catalog');
+            } else {
+                alert('You are not the owner of this player');
+            }
         }
     };
 

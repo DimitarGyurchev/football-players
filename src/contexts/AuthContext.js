@@ -20,7 +20,7 @@ export const AuthProvider = ({
 
             setAuth(result);
 
-            navigate('/catalog'); // that must be a my team route
+            return navigate('/catalog');
         } catch (error) {
             console.log('There is a problem');
         }
@@ -37,7 +37,7 @@ export const AuthProvider = ({
 
             setAuth(result);
 
-            navigate('/catalog'); // that must be a my team route
+            return navigate('/catalog');
         } catch (error) {
             console.log('There is a problem');
         }

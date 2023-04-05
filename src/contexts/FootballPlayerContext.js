@@ -24,7 +24,7 @@ export const FootballPlayerProvider = ({
 
         setPlayers(state => [...state, newPlayer]);
 
-        navigate('/catalog');
+        return navigate('/catalog');
     };
 
     const onPlayerEditSubmit = async (values) => {
