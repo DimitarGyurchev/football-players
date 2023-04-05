@@ -20,7 +20,7 @@ export const Login = () => {
             <h2>Login</h2>
             <label htmlFor="username">Email:</label>
             <input
-                className={styles.input}
+                className={styles.input_email}
                 type="username"
                 id="username"
                 name={LoginFormKeys.Email}

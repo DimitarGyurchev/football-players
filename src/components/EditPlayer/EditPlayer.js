@@ -10,7 +10,7 @@ import { footballPlayerServiceFactory } from "../../services/footballPlayerServi
 
 export const EditPlayer = () => {
     const { onPlayerEditSubmit } = usePlayerContext();
-    const { playerId } = useParams;
+    const { playerId } = useParams();
     const footballPlayerService = useService(footballPlayerServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
         _id: '',

@@ -45,16 +45,21 @@ export const PlayerDetails = () => {
 
     const isOwner = player._ownerId === userId;
 
+    const confirmDialog = (message) => {
+        return new Promise((resolve) => {
+            const confirmation = window.confirm(message);
+            resolve(confirmation);
+        });
+    };
+
     const onDeleteClick = async () => {
-        // eslint-disable-next-line no-restricted-globals
-        const result = confirm(`Are you sure you want to delete this player ${player.fullName}`);
+        const result = await confirmDialog(`Are you sure you want to delete this player ${player.fullName}`);
 
         if (result) {
             await footballPlayerService.delete(player._id);
-
             deletePlayer(player._id);
+            return navigate('/catalog');
 
-            navigate('/catalog');
         }
     };
 

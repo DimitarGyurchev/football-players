@@ -10,6 +10,7 @@
     margin: 80px auto;
     margin-bottom: 120px;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .catalog_page h1 {

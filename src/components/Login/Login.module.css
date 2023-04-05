@@ -45,3 +45,7 @@ button {
 button:hover {
     background-color: #2E8B57;
 }
+
+.input_email {
+    width: 97%;
+}

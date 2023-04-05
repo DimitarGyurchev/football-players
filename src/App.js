@@ -15,6 +15,7 @@ import { CreateFootballPlayer } from './components/CreateFootballPlayer/CreateFo
 import { PlayerDetails } from './components/PlayerDetails/PlayerDetails';
 import { FootballPlayerOwner } from './components/common/FootballPlayerOwner';
 import { EditPlayer } from './components/EditPlayer/EditPlayer';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 
 function App() {
     return (
@@ -44,6 +45,7 @@ function App() {
                                 <Route path='/create' element={<CreateFootballPlayer />} />
                                 <Route path='/logout' element={<Logout />} />
                             </Route>
+                            <Route path="*" element={<NotFoundPage />} />
                         </Routes>
 
                     </main>
